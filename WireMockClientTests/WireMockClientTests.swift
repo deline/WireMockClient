@@ -7,6 +7,9 @@
 //
 
 import XCTest
+import Nimble
+import Alamofire
+
 @testable import WireMockClient
 
 class WireMockClientTests: XCTestCase {
@@ -21,16 +24,26 @@ class WireMockClientTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    func testCanCreateStubGet() {
+        stubFor(get(url("/helloWorld"))
+            .andReturn(response(200)
+                .withBody("A")))
+        
+        var responseContent: String?
+        Alamofire.request(.GET, "http://localhost:8080/helloWorld").response {
+            request, response, data, error in
+            print(request)
+            print(response)
+            print(data)
+            print(error)
+            
+            responseContent = "XX"
         }
+        
+        expect(responseContent).toEventuallyNot(beNil())
+        
+        
+        
     }
     
 }
