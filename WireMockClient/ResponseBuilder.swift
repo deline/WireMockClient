@@ -8,7 +8,9 @@
 
 import Foundation
 
-public class ResponseMappingBuilder {
+typealias ResponseMappingsDictionary = [String: AnyObject]
+
+public class ResponseBuilder {
 
     private let status: Int
     private var body: String?
@@ -17,8 +19,12 @@ public class ResponseMappingBuilder {
         self.status = status
     }
     
-    public func withBody(body: String) -> ResponseMappingBuilder {
+    public func withBody(body: String) -> ResponseBuilder {
         self.body = body
         return self
+    }
+    
+    func build() -> ResponseMappingsDictionary {
+        return ResponseMappingsDictionary()
     }
 }

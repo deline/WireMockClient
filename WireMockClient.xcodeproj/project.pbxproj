@@ -10,10 +10,13 @@
 		73A637281C5A28C200C57073 /* WireMockClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 73A637271C5A28C200C57073 /* WireMockClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73A6372F1C5A28C200C57073 /* WireMockClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A637241C5A28C200C57073 /* WireMockClient.framework */; };
 		73A637341C5A28C200C57073 /* WireMockClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A637331C5A28C200C57073 /* WireMockClientTests.swift */; };
-		73A6373F1C5A2AD600C57073 /* WireMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A6373E1C5A2AD600C57073 /* WireMock.swift */; };
-		73A637431C5A2CEF00C57073 /* RequestMappingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A637401C5A2CEF00C57073 /* RequestMappingBuilder.swift */; };
-		73A637441C5A2CEF00C57073 /* ResponseMappingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A637411C5A2CEF00C57073 /* ResponseMappingBuilder.swift */; };
+		73A6373F1C5A2AD600C57073 /* WireMockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A6373E1C5A2AD600C57073 /* WireMockClient.swift */; };
+		73A637431C5A2CEF00C57073 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A637401C5A2CEF00C57073 /* RequestBuilder.swift */; };
+		73A637441C5A2CEF00C57073 /* ResponseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A637411C5A2CEF00C57073 /* ResponseBuilder.swift */; };
 		73A637451C5A2CEF00C57073 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A637421C5A2CEF00C57073 /* Url.swift */; };
+		73A637471C5A348300C57073 /* WireMockClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A637461C5A348300C57073 /* WireMockClientManager.swift */; };
+		73A6374B1C5A36F300C57073 /* MappingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A6374A1C5A36F300C57073 /* MappingBuilder.swift */; };
+		73A6374D1C5A3BDD00C57073 /* Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A6374C1C5A3BDD00C57073 /* Mapping.swift */; };
 		8E3CF58F4E05140A755BF8BD /* Pods_WireMockClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6D4A54AA268ED913D17DF9 /* Pods_WireMockClientTests.framework */; };
 		BF52F966D7140035D26628AF /* Pods_WireMockClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08343DF096AA2D7E3360ADB3 /* Pods_WireMockClient.framework */; };
 /* End PBXBuildFile section */
@@ -38,10 +41,13 @@
 		73A6372E1C5A28C200C57073 /* WireMockClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WireMockClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A637331C5A28C200C57073 /* WireMockClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireMockClientTests.swift; sourceTree = "<group>"; };
 		73A637351C5A28C200C57073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73A6373E1C5A2AD600C57073 /* WireMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireMock.swift; sourceTree = "<group>"; };
-		73A637401C5A2CEF00C57073 /* RequestMappingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMappingBuilder.swift; sourceTree = "<group>"; };
-		73A637411C5A2CEF00C57073 /* ResponseMappingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMappingBuilder.swift; sourceTree = "<group>"; };
+		73A6373E1C5A2AD600C57073 /* WireMockClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireMockClient.swift; sourceTree = "<group>"; };
+		73A637401C5A2CEF00C57073 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		73A637411C5A2CEF00C57073 /* ResponseBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseBuilder.swift; sourceTree = "<group>"; };
 		73A637421C5A2CEF00C57073 /* Url.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
+		73A637461C5A348300C57073 /* WireMockClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireMockClientManager.swift; sourceTree = "<group>"; };
+		73A6374A1C5A36F300C57073 /* MappingBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingBuilder.swift; sourceTree = "<group>"; };
+		73A6374C1C5A3BDD00C57073 /* Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapping.swift; sourceTree = "<group>"; };
 		786832EB86CE55CFBE9148FD /* Pods-WireMockClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WireMockClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WireMockClient/Pods-WireMockClient.debug.xcconfig"; sourceTree = "<group>"; };
 		7A1891E51CAFA8A40A3273F6 /* Pods-WireMockClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WireMockClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-WireMockClient/Pods-WireMockClient.release.xcconfig"; sourceTree = "<group>"; };
 		B937EC7B243FBE4F5B34B74B /* Pods-WireMockClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WireMockClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WireMockClientTests/Pods-WireMockClientTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,12 +108,15 @@
 		73A637261C5A28C200C57073 /* WireMockClient */ = {
 			isa = PBXGroup;
 			children = (
-				73A637401C5A2CEF00C57073 /* RequestMappingBuilder.swift */,
-				73A637411C5A2CEF00C57073 /* ResponseMappingBuilder.swift */,
+				73A637401C5A2CEF00C57073 /* RequestBuilder.swift */,
+				73A637411C5A2CEF00C57073 /* ResponseBuilder.swift */,
 				73A637421C5A2CEF00C57073 /* Url.swift */,
 				73A637271C5A28C200C57073 /* WireMockClient.h */,
 				73A637291C5A28C200C57073 /* Info.plist */,
-				73A6373E1C5A2AD600C57073 /* WireMock.swift */,
+				73A6373E1C5A2AD600C57073 /* WireMockClient.swift */,
+				73A637461C5A348300C57073 /* WireMockClientManager.swift */,
+				73A6374A1C5A36F300C57073 /* MappingBuilder.swift */,
+				73A6374C1C5A3BDD00C57073 /* Mapping.swift */,
 			);
 			path = WireMockClient;
 			sourceTree = "<group>";
@@ -323,9 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73A637431C5A2CEF00C57073 /* RequestMappingBuilder.swift in Sources */,
-				73A637441C5A2CEF00C57073 /* ResponseMappingBuilder.swift in Sources */,
-				73A6373F1C5A2AD600C57073 /* WireMock.swift in Sources */,
+				73A637431C5A2CEF00C57073 /* RequestBuilder.swift in Sources */,
+				73A637471C5A348300C57073 /* WireMockClientManager.swift in Sources */,
+				73A637441C5A2CEF00C57073 /* ResponseBuilder.swift in Sources */,
+				73A6373F1C5A2AD600C57073 /* WireMockClient.swift in Sources */,
+				73A6374D1C5A3BDD00C57073 /* Mapping.swift in Sources */,
+				73A6374B1C5A36F300C57073 /* MappingBuilder.swift in Sources */,
 				73A637451C5A2CEF00C57073 /* Url.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

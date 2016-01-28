@@ -15,19 +15,21 @@ public enum RequestMethod: String {
     case POST
 }
 
-public class RequestMappingBuilder {
+typealias RequestMappingsDictionary = [String: AnyObject]
+
+public class RequestBuilder {
     
     private let method: RequestMethod
     private let url: Url
-    private var responseMappingBuilder: ResponseMappingBuilder?
+    private var responseBuilder: ResponseBuilder?
     
     init(method: RequestMethod, url: Url) {
         self.method = method
         self.url = url
+    }   
+    
+    func build() -> RequestMappingsDictionary {
+        return RequestMappingsDictionary()
     }
     
-    public func andReturn(responseMappingBuilder: ResponseMappingBuilder) -> RequestMappingBuilder {
-        self.responseMappingBuilder = responseMappingBuilder
-        return self
-    }
 }

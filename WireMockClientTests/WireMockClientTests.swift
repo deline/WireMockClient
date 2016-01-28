@@ -8,6 +8,7 @@
 
 import XCTest
 import Nimble
+//import Hamcrest
 import Alamofire
 
 @testable import WireMockClient
@@ -25,9 +26,7 @@ class WireMockClientTests: XCTestCase {
     }
     
     func testCanCreateStubGet() {
-        stubFor(get(url("/helloWorld"))
-            .andReturn(response(200)
-                .withBody("A")))
+        stubFor(get(url("/helloWorld")).andReturn(response(200).withBody("A")))
         
         var responseContent: String?
         Alamofire.request(.GET, "http://localhost:8080/helloWorld").response {
@@ -41,9 +40,6 @@ class WireMockClientTests: XCTestCase {
         }
         
         expect(responseContent).toEventuallyNot(beNil())
-        
-        
-        
     }
     
 }
