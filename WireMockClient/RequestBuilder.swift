@@ -15,7 +15,7 @@ public enum RequestMethod: String {
     case POST
 }
 
-typealias RequestMappingsDictionary = [String: AnyObject]
+//typealias RequestMappingsDictionary = [String: AnyObject]
 
 public class RequestBuilder {
     
@@ -28,8 +28,8 @@ public class RequestBuilder {
         self.url = url
     }   
     
-    func build() -> RequestMappingsDictionary {
-        return RequestMappingsDictionary()
+    func build() -> Request {
+        return Request(method: method, url: url)
     }
     
 }

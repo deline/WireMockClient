@@ -7,7 +7,22 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Mapping {
+class Mapping: Mappable {
     
+//    init(request: Request) {
+//        
+//    }
+    
+    init() {
+        
+    }
+    
+    required init?(_ map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+    }
 }

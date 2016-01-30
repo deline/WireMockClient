@@ -7,8 +7,7 @@
 //
 
 import Foundation
-
-typealias ResponseMappingsDictionary = [String: AnyObject]
+import SwiftyJSON
 
 public class ResponseBuilder {
 
@@ -24,7 +23,12 @@ public class ResponseBuilder {
         return self
     }
     
-    func build() -> ResponseMappingsDictionary {
-        return ResponseMappingsDictionary()
+    public func withBody(json: JSON) -> ResponseBuilder {
+        body = json.rawString()
+        return self
+    }
+    
+    func build() -> Response {
+        return Response(status: status, body: body)
     }
 }

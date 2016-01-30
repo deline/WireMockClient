@@ -22,7 +22,11 @@ public class MappingBuilder {
     }
     
     func build() -> Mapping {
-        debugPrint("XXXXX")
+//        let responseMappingsDict = responseBuilder?.build() ?? ResponseMappingsDictionary()
+//        return Mapping(request: requestBuilder.build(), response: responseMappingsDict)
+        
+//        return Mapping(re
+        
         return Mapping()
     }
 }
