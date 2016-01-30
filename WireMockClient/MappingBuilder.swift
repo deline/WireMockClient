@@ -22,11 +22,6 @@ public class MappingBuilder {
     }
     
     func build() -> Mapping {
-//        let responseMappingsDict = responseBuilder?.build() ?? ResponseMappingsDictionary()
-//        return Mapping(request: requestBuilder.build(), response: responseMappingsDict)
-        
-//        return Mapping(re
-        
-        return Mapping()
+        return Mapping(request: requestBuilder.build(), response: responseBuilder?.build())
     }
 }

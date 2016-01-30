@@ -11,12 +11,12 @@ import ObjectMapper
 
 class Mapping: Mappable {
     
-//    init(request: Request) {
-//        
-//    }
+    private var request:Request?
+    private var response: Response?
     
-    init() {
-        
+    init(request: Request, response: Response?) {
+        self.request = request
+        self.response = response
     }
     
     required init?(_ map: Map) {
@@ -24,5 +24,7 @@ class Mapping: Mappable {
     }
     
     func mapping(map: Map) {
+        request <- map["request"]
+        response <- map["response"]
     }
 }
