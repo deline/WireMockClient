@@ -11,11 +11,11 @@ import ObjectMapper
 
 class Response: Mappable {
  
-    var status: String?
+    var status: Int?
     var body: String?
     
     init(status: Int, body: String?) {
-        self.status = String(status)
+        self.status = status
         self.body = body
     }
     

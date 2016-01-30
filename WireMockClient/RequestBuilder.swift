@@ -15,8 +15,6 @@ public enum RequestMethod: String {
     case POST
 }
 
-//typealias RequestMappingsDictionary = [String: AnyObject]
-
 public class RequestBuilder {
     
     private let method: RequestMethod

@@ -11,20 +11,20 @@ import ObjectMapper
 
 class Request: Mappable {
     
-    var url: String?
-    var method: String?
+    var url: Url?
+    var method: RequestMethod?
+    let urlTransformer = TransformOf<Url, String>(fromJSON: { Url($0!) }, toJSON: { $0.map { $0.url } })
     
     init(method: RequestMethod, url: Url) {
-        self.method = method.rawValue
-        self.url = url.url
+        self.method = method
+        self.url = url
     }
     
-    required init?(_ map: Map) {
-        
+    required init?(_ map: Map) {        
     }
     
     func mapping(map: Map) {
-        url     <- map["url"]
+        url <- (map["url"], urlTransformer)
         method  <- map["method"]
     }
 }

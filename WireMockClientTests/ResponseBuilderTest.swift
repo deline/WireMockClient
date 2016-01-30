@@ -21,9 +21,9 @@ class ResponseBuilderTest: XCTestCase {
         let builder = ResponseBuilder(status: 200).withBody(responseBody)
         let response = builder.build()
         
-        let responseJson = Mapper().toJSON(response) as! [String: String]
-        expect(responseJson["status"]).to(equal("200"))
-        expect(responseJson["body"]).to(equal(responseBody))
+        let responseJson = Mapper().toJSON(response)
+        expect(responseJson["status"] as? Int).to(equal(200))
+        expect(responseJson["body"] as? String).to(equal(responseBody))
     }
 
     func testCreatesResponseWithCorrectDetailsWhenBodyIsJson() {
@@ -31,8 +31,17 @@ class ResponseBuilderTest: XCTestCase {
         let builder = ResponseBuilder(status: 200).withBody(jsonResponseBody)
         let response = builder.build()
 
-        let responseJson = Mapper().toJSON(response) as! [String: String]
-        expect(responseJson["status"]).to(equal("200"))
-        expect(responseJson["body"]).to(equal(jsonResponseBody.rawString()))
+        let responseJson = Mapper().toJSON(response)
+        expect(responseJson["status"] as? Int).to(equal(200))
+        expect(responseJson["body"] as? String).to(equal(jsonResponseBody.rawString()))
+    }
+
+    func testDoesNotIncludeFieldsThatAreNilWhenSerialisedToJson() {
+        let builder = ResponseBuilder(status: 200)
+        let response = builder.build()
+        
+        let responseJson = Mapper().toJSON(response)
+        expect(responseJson["status"] as? Int).to(equal(200))
+        expect(responseJson["body"] as? String).to(beNil())
     }
 }
