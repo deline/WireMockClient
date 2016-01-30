@@ -18,7 +18,7 @@ class RequestBuilderTest: XCTestCase {
     func testCreatesRequestWithCorrectDetails() {
         let builder = RequestBuilder(method: .GET, url: url("/helloWorld"))
         let request = builder.build()
-
+        
         let requestJson = Mapper().toJSON(request) as! [String: String]
         expect(requestJson["method"]).to(equal("GET"))
         expect(requestJson["url"]).to(equal("/helloWorld"))

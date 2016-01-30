@@ -24,8 +24,8 @@ public class RequestBuilder {
     init(method: RequestMethod, url: Url) {
         self.method = method
         self.url = url
-    }   
-    
+    }
+
     func build() -> Request {
         return Request(method: method, url: url)
     }

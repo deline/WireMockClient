@@ -16,8 +16,7 @@ private class WireMockClient {
    
     func registerMapping(mappingBuilder: MappingBuilder) {
         manager.addMapping(mappingBuilder.build())
-    }
-    
+    }    
 }
 
 public func stubFor(mappingBuilder: MappingBuilder) {

@@ -8,38 +8,26 @@
 
 import XCTest
 import Nimble
-//import Hamcrest
 import Alamofire
 
 @testable import WireMockClient
 
 class WireMockClientTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
+    /*
+     * This requires you to be running the WireMock standalone jar
+     * e.g. java -jar wiremock-1.57-standalone.jar - --verbose
+     */
     func testCanCreateStubGet() {
-        stubFor(get(url("/helloWorld")).andReturn(response(200).withBody("A")))
+        stubFor(get(url("/helloWorld")).andReturn(response(200).withBody("This is the body")))
         
         var responseContent: String?
-        Alamofire.request(.GET, "http://localhost:8080/helloWorld").response {
-            request, response, data, error in
-            print(request)
-            print(response)
-            print(data)
-            print(error)
-            
-            responseContent = "XX"
+        Alamofire.request(.GET, "http://localhost:8080/helloWorld").responseString {
+            response in
+            responseContent = response.result.value
         }
         
         expect(responseContent).toEventuallyNot(beNil())
+        expect(responseContent).to(equal("This is the body"))
     }
-    
 }
