@@ -15,12 +15,20 @@ import Nimble
 
 class RequestBuilderTest: XCTestCase {
     
-    func testCreatesRequestWithCorrectDetails() {
+    func testCreatesGetRequest() {
         let builder = RequestBuilder(method: .GET, url: url("/helloWorld"))
         let request = builder.build()
         
         let requestJson = Mapper().toJSON(request) as! [String: String]
         expect(requestJson["method"]).to(equal("GET"))
         expect(requestJson["url"]).to(equal("/helloWorld"))
+    }
+    
+    func testCreatesPostRequest() {
+//        let builder = RequestBuilder(method: .POST, url: url(
+    }
+    
+    func testCreatesPostRequestWithJsonBody() {
+        
     }
 }

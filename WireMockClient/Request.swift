@@ -11,6 +11,8 @@ import ObjectMapper
 
 class Request: Mappable {
     
+    static private let b = "X"
+    
     var url: Url?
     var method: RequestMethod?
     let urlTransformer = TransformOf<Url, String>(fromJSON: { Url($0!) }, toJSON: { $0.map { $0.url } })

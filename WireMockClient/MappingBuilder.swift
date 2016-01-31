@@ -13,9 +13,14 @@ public class MappingBuilder {
     var responseBuilder: ResponseBuilder?
     
     init(method: RequestMethod, url: Url) {
-        requestBuilder = RequestBuilder(method: .GET, url: url)
+        requestBuilder = RequestBuilder(method: method, url: url)
     }
     
+    public func withRequestBody(body: String) -> MappingBuilder {
+        requestBuilder.withBody(body)
+        return self
+    }
+
     public func andReturn(responseBuilder: ResponseBuilder) -> MappingBuilder {
         self.responseBuilder = responseBuilder
         return self

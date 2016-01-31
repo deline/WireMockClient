@@ -23,8 +23,12 @@ public func stubFor(mappingBuilder: MappingBuilder) {
     WireMockClient.sharedInstance.registerMapping(mappingBuilder)
 }
 
-public func get(url: Url) -> MappingBuilder {
-    return MappingBuilder(method: .GET, url: url)
+//public func get(url: Url) -> MappingBuilder {
+//    return MappingBuilder(method: .GET, url: url)
+//}
+
+public func request(method: RequestMethod, url: String) -> MappingBuilder {
+    return MappingBuilder(method: method, url: Url(url))
 }
 
 public func url(url: String) -> Url {

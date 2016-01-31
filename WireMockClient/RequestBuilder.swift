@@ -19,11 +19,17 @@ public class RequestBuilder {
     
     private let method: RequestMethod
     private let url: Url
+    private var body: String?
     private var responseBuilder: ResponseBuilder?
     
     init(method: RequestMethod, url: Url) {
         self.method = method
         self.url = url
+    }
+    
+    public func withBody(body: String) -> RequestBuilder {
+        self.body = body
+        return self
     }
 
     func build() -> Request {
