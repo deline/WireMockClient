@@ -20,12 +20,22 @@ class RequestBuilderTest: XCTestCase {
         let request = builder.build()
         
         let requestJson = Mapper().toJSON(request) as! [String: String]
+        
+        print(requestJson)
+        
         expect(requestJson["method"]).to(equal("GET"))
         expect(requestJson["url"]).to(equal("/helloWorld"))
+        expect(requestJson["bodyPatterns"]).to(beNil())
+        
     }
     
-    func testCreatesPostRequest() {
-//        let builder = RequestBuilder(method: .POST, url: url(
+    func testCreatesPostRequestWithRequestBody() {
+        let builder = RequestBuilder(method: .POST, url: url("/helloWorld"))
+        builder.withBody("requestBodyContent")
+        let request = builder.build()
+        
+        let requestJson = Mapper().toJSON(request)        
+        expect(requestJson["bodyPatterns"]).toNot(beNil())
     }
     
     func testCreatesPostRequestWithJsonBody() {

@@ -14,6 +14,8 @@ class WireMockClientManager {
         
         let semaphore = dispatch_semaphore_create(0)
         
+        print(mapping.toJSONString(true)!)
+        
         Alamofire.request(.POST, "http://localhost:8080/__admin/mappings/new", parameters: mapping.toJSON(), encoding: .JSON).response {
             _ in
             dispatch_semaphore_signal(semaphore)

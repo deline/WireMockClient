@@ -15,11 +15,14 @@ public enum RequestMethod: String {
     case POST
 }
 
+typealias BodyPatternValue = (String, String)
+typealias BodyPatterns = [BodyPatternValue]
+
 public class RequestBuilder {
     
     private let method: RequestMethod
     private let url: Url
-    private var body: String?
+    private var bodyPatterns: BodyPatterns?
     private var responseBuilder: ResponseBuilder?
     
     init(method: RequestMethod, url: Url) {
@@ -28,12 +31,13 @@ public class RequestBuilder {
     }
     
     public func withBody(body: String) -> RequestBuilder {
-        self.body = body
+        bodyPatterns = BodyPatterns()
+        bodyPatterns?.append(("matches", body))        
         return self
     }
 
     func build() -> Request {
-        return Request(method: method, url: url)
+        return Request(method: method, url: url, bodyPatterns: bodyPatterns)
     }
     
 }

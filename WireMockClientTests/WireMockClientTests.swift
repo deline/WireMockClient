@@ -37,16 +37,17 @@ class WireMockClientTests: XCTestCase {
         stubFor(request(.POST, url: "/helloWorld").withRequestBody("post content").andReturn(response(201)))
         
         var responseStatusCode: Int?
-        Alamofire.request(.POST, WireMockClientTests.url, parameters: [:], encoding: .Custom({
-            (convertible, params) in
-            let mutableRequest = convertible.URLRequest.copy() as! NSMutableURLRequest
-            mutableRequest.HTTPBody = "post conteXXnt".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-            return (mutableRequest, nil)
-        })).response { _, response, _, _    in
+        
+        let postRequest = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8080/helloWorld")!)
+        postRequest.HTTPMethod = "POST"
+        postRequest.HTTPBody = "post content".dataUsingEncoding(NSUTF8StringEncoding)
+        Alamofire.request(postRequest).response {
+            _, response, _, _    in
             responseStatusCode = response?.statusCode
+            print(response)
         }
         
         expect(responseStatusCode).toEventuallyNot(beNil())
-        expect(responseStatusCode).to(equal(400))
+        expect(responseStatusCode).to(equal(201))
     }
 }
