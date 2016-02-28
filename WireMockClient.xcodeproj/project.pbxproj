@@ -23,6 +23,7 @@
 		73A637551C5C801C00C57073 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A637541C5C801C00C57073 /* Response.swift */; };
 		73A637571C5CB5C700C57073 /* MappingBuilderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A637561C5CB5C700C57073 /* MappingBuilderTest.swift */; };
 		8E3CF58F4E05140A755BF8BD /* Pods_WireMockClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6D4A54AA268ED913D17DF9 /* Pods_WireMockClientTests.framework */; };
+		B06690D491EA276D45BEDBEC /* RequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0669C51876ED40EF504E36A /* RequestTest.swift */; };
 		BF52F966D7140035D26628AF /* Pods_WireMockClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08343DF096AA2D7E3360ADB3 /* Pods_WireMockClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		73A637561C5CB5C700C57073 /* MappingBuilderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingBuilderTest.swift; sourceTree = "<group>"; };
 		786832EB86CE55CFBE9148FD /* Pods-WireMockClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WireMockClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WireMockClient/Pods-WireMockClient.debug.xcconfig"; sourceTree = "<group>"; };
 		7A1891E51CAFA8A40A3273F6 /* Pods-WireMockClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WireMockClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-WireMockClient/Pods-WireMockClient.release.xcconfig"; sourceTree = "<group>"; };
+		B0669C51876ED40EF504E36A /* RequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTest.swift; sourceTree = "<group>"; };
 		B937EC7B243FBE4F5B34B74B /* Pods-WireMockClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WireMockClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WireMockClientTests/Pods-WireMockClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				73A6374E1C5C705F00C57073 /* RequestBuilderTest.swift */,
 				73A637521C5C7E9400C57073 /* ResponseBuilderTest.swift */,
 				73A637561C5CB5C700C57073 /* MappingBuilderTest.swift */,
+				B0669C51876ED40EF504E36A /* RequestTest.swift */,
 			);
 			path = WireMockClientTests;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				73A637531C5C7E9400C57073 /* ResponseBuilderTest.swift in Sources */,
 				73A637571C5CB5C700C57073 /* MappingBuilderTest.swift in Sources */,
 				73A637341C5A28C200C57073 /* WireMockClientTests.swift in Sources */,
+				B06690D491EA276D45BEDBEC /* RequestTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

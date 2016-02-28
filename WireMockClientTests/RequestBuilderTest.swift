@@ -20,9 +20,6 @@ class RequestBuilderTest: XCTestCase {
         let request = builder.build()
         
         let requestJson = Mapper().toJSON(request) as! [String: String]
-        
-        print(requestJson)
-        
         expect(requestJson["method"]).to(equal("GET"))
         expect(requestJson["url"]).to(equal("/helloWorld"))
         expect(requestJson["bodyPatterns"]).to(beNil())

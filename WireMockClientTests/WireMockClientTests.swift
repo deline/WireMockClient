@@ -50,4 +50,13 @@ class WireMockClientTests: XCTestCase {
         expect(responseStatusCode).toEventuallyNot(beNil())
         expect(responseStatusCode).to(equal(201))
     }
+    
+    func testCanResetMappings() {
+        stubFor(request(.GET, url: "/this").andReturn(response(200).withBody("This is the body")))
+        stubFor(request(.GET, url: "/that").andReturn(response(200).withBody("That is the body")))
+        
+        let stubMappings = listAllStubMappings()
+        expect(stubMappings.count).to(beGreaterThan(2))
+
+    }
 }

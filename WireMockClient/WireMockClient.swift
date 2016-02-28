@@ -16,16 +16,20 @@ private class WireMockClient {
    
     func registerMapping(mappingBuilder: MappingBuilder) {
         manager.addMapping(mappingBuilder.build())
-    }    
+    }
+    
+    func allMappings() -> [String] {
+        return manager.allMappings()
+    }
+    
+    func resetAllMappings() {
+        return manager.resetAllMappings()
+    }
 }
 
 public func stubFor(mappingBuilder: MappingBuilder) {
     WireMockClient.sharedInstance.registerMapping(mappingBuilder)
 }
-
-//public func get(url: Url) -> MappingBuilder {
-//    return MappingBuilder(method: .GET, url: url)
-//}
 
 public func request(method: RequestMethod, url: String) -> MappingBuilder {
     return MappingBuilder(method: method, url: Url(url))
@@ -37,5 +41,13 @@ public func url(url: String) -> Url {
 
 public func response(status: Int) -> ResponseBuilder {
     return ResponseBuilder(status: status)
+}
+
+public func listAllStubMappings() -> [String] {
+    return WireMockClient.sharedInstance.allMappings()
+}
+
+public func resetAllMappings() {
+    return WireMockClient.sharedInstance.resetAllMappings()
 }
 
