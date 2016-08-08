@@ -8,7 +8,7 @@ target 'WireMockClient' do
 end
 
 target 'WireMockClientTests', :exclusive => true do
-	pod 'Alamofire', '~> 3.1'
+    pod 'Alamofire', '~> 3.1'
     pod 'ObjectMapper', '~> 1.1'
     pod 'Nimble', '~> 3.1'
 end
